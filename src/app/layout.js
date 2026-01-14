@@ -1,6 +1,20 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono,Averia_Serif_Libre,IBM_Plex_Mono, Open_Sans,  } from "next/font/google";
 import "./globals.css";
 
+const averia = Averia_Serif_Libre({
+  variable: "--font-averia-serif",
+  weight: "300",
+  style: "normal",
+    subsets: ["latin"],
+})
+const ibmplex = IBM_Plex_Mono({
+  variable: "--font-ibm-plex",
+  weight: "300",
+})
+const opensans = Open_Sans({
+  variable: "--font-open-sans",
+  weight: "300",
+})
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -20,7 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${averia.variable} ${ibmplex.variable} ${opensans.variable} antialiased`}
       >
         {children}
       </body>

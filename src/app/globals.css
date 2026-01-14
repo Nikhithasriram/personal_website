@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #2D2932;
+  --foreground: #ededed;
+  --accent: #99E1D9;
 }
 
 @theme inline {
@@ -12,15 +13,83 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  overflow-x: hidden;
 }
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-ibm-plex), Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--accent);
+  font-family: var(--font-averia-serif), sans-serif;
+}
+
+.blog-heading {
+  font-family: var(--font-averia-serif), sans-serif;
+  color: var(--foreground);
+}
+
+.article-content a {
+  color: var(--accent);
+}
+
+.border-accent {
+  border-color: var(--accent);
+}
+.nav-element{
+  color: var(--foreground);
+  opacity: 0.7;
+}
+
+.article-content h1 {
+  font-size: xx-large;
+  margin-bottom: 10;
+}
+
+.article-content h2 {
+  font-size:x-large;
+}
+.article-content h3 {
+  margin-top: 40;
+  margin-bottom: 10;
+  font-size: x-large;
+}
+
+.article-content p{
+  margin-top: 15;
+  margin-bottom: 15;
+}
+.article-content {
+  max-width: 75ch;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.date {
+  margin-top: -4;
+  font-size: large;
+  opacity: 0.7;
+  color: var(--foreground);
+  font-family: var(--font-ibm-plex)
+}
+
+@media (max-width: 640px) {
+  .article-content h1 {
+    font-size: 2rem;
+  }
+
+  .article-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .article-content h3 {
+    font-size: 1.25rem;
+  }
 }
