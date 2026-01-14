@@ -29,7 +29,7 @@ export function getAllPosts(){
 }
 
 export async function getPostBySlug(slug) {
-    console.log("sulg",slug)
+
     const filePath = path.join(blogDir, `${slug}.md`);
     const raw = fs.readFileSync(filePath, "utf-8");
 

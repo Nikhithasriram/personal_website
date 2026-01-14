@@ -1,6 +1,7 @@
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { formatDate } from "@/lib/date";
 import Link from "next/link";
+import Footer from "@/app/footer";
 export async function generateStaticParams() {
     const posts = getAllPosts();
     return posts.map((post)=>{
@@ -31,6 +32,7 @@ export default async function BlogPage({ params }) {
                 dangerouslySetInnerHTML={{ __html: post.content }}
             />
             </div>
+            <Footer/>
         </main>
     );
 }
